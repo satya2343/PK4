@@ -32,7 +32,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
             ['class' => 'yii\grid\ActionColumn'],
             [
-                'label' => 'keluarkan',
+                'label' => 'SIMULASI',
                 'format'=>'raw',
                 'value'=>function($dataProvider){
                     if($dataProvider->waktu_keluar != null){

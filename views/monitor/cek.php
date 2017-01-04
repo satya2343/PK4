@@ -13,7 +13,7 @@ $monitor = new Monitor();
 $data = $monitor->cekAvailable();
 
 //echo '<pre>';
-//print_r($data);
+//print_r(empty($data));
 //echo '</pre>';
 //exit();
 
@@ -23,8 +23,10 @@ $data = $monitor->cekAvailable();
     <tr>
         <td>
             <?php
-
-                if($data[1]['available'] == 1 && $data[1]['is_there'] == 0){
+                if(empty($data)){
+                    echo MonitorController::cetakKosong();
+                }
+                elseif($data[1]['available'] == 1 && $data[1]['is_there'] == 0){
                     //parkiran tidak ada isinya
                     echo MonitorController::cetakKosong();
                 }elseif ($data[1]['available'] == 0 && $data[1]['is_there'] == 0){
@@ -33,14 +35,18 @@ $data = $monitor->cekAvailable();
                 }elseif ($data[1]['available'] == 0 && $data[1]['is_there'] == 1){
                     //parkiran sudah dipesan dan orangnya sudah datang
                     echo MonitorController::cetakIsi($data[1]);
+                }else{
+                    echo MonitorController::cetakKosong();
                 }
 
             ?>
         </td>
         <td>
             <?php
-
-            if($data[2]['available'] == 1 && $data[2]['is_there'] == 0){
+            if(empty($data)){
+                echo MonitorController::cetakKosong();
+            }
+            elseif($data[2]['available'] == 1 && $data[2]['is_there'] == 0){
                 //parkiran tidak ada isinya
                 echo MonitorController::cetakKosong();
             }elseif ($data[2]['available'] == 0 && $data[2]['is_there'] == 0){
@@ -49,6 +55,8 @@ $data = $monitor->cekAvailable();
             }elseif ($data[2]['available'] == 0 && $data[2]['is_there'] == 1){
                 //parkiran sudah dipesan dan orangnya sudah datang
                 echo MonitorController::cetakIsi($data[2]);
+            }else{
+                echo MonitorController::cetakKosong();
             }
 
             ?>
@@ -60,8 +68,10 @@ $data = $monitor->cekAvailable();
         <td></td>
         <td>
             <?php
-
-            if($data[3]['available'] == 1 && $data[3]['is_there'] == 0){
+            if(empty($data)){
+                echo MonitorController::cetakKosong();
+            }
+            elseif($data[3]['available'] == 1 && $data[3]['is_there'] == 0){
                 //parkiran tidak ada isinya
                 echo MonitorController::cetakKosong();
             }elseif ($data[3]['available'] == 0 && $data[3]['is_there'] == 0){
@@ -70,6 +80,8 @@ $data = $monitor->cekAvailable();
             }elseif ($data[3]['available'] == 0 && $data[3]['is_there'] == 1){
                 //parkiran sudah dipesan dan orangnya sudah datang
                 echo MonitorController::cetakIsi($data[3]);
+            }else{
+                echo MonitorController::cetakKosong();
             }
 
             ?>
@@ -78,8 +90,10 @@ $data = $monitor->cekAvailable();
     <tr>
         <td>
             <?php
-
-            if($data[4]['available'] == 1 && $data[4]['is_there'] == 0){
+            if(empty($data)){
+                echo MonitorController::cetakKosong();
+            }
+            elseif($data[4]['available'] == 1 && $data[4]['is_there'] == 0){
                 //parkiran tidak ada isinya
                 echo MonitorController::cetakKosong();
             }elseif ($data[4]['available'] == 0 && $data[4]['is_there'] == 0){
@@ -88,14 +102,18 @@ $data = $monitor->cekAvailable();
             }elseif ($data[4]['available'] == 0 && $data[4]['is_there'] == 1){
                 //parkiran sudah dipesan dan orangnya sudah datang
                 echo MonitorController::cetakIsi($data[4]);
+            }else{
+                echo MonitorController::cetakKosong();
             }
 
             ?>
         </td>
         <td>
             <?php
-
-            if($data[5]['available'] == 1 && $data[5]['is_there'] == 0){
+            if(empty($data)){
+                echo MonitorController::cetakKosong();
+            }
+            elseif($data[5]['available'] == 1 && $data[5]['is_there'] == 0){
                 //parkiran tidak ada isinya
                 echo MonitorController::cetakKosong();
             }elseif ($data[5]['available'] == 0 && $data[5]['is_there'] == 0){
@@ -104,6 +122,8 @@ $data = $monitor->cekAvailable();
             }elseif ($data[5]['available'] == 0 && $data[5]['is_there'] == 1){
                 //parkiran sudah dipesan dan orangnya sudah datang
                 echo MonitorController::cetakIsi($data[5]);
+            }else{
+                echo MonitorController::cetakKosong();
             }
 
             ?>

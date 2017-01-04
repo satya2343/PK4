@@ -84,9 +84,12 @@ class Monitor extends \yii\db\ActiveRecord
         $tempat = $this->$attribute;
 
         $available = $this->cekAvailable();
-        for ($i=1;$i<=5;$i++){
-            if($available[$i]['available'] == 0 && $tempat == $i ){
-                $this->addError($attribute,'Tempat Sudah Diisi!!');
+        if(!empty($available))
+        {
+            for ($i=1;$i<=5;$i++){
+                if($available[$i]['available'] == 0 && $tempat == $i ){
+                    $this->addError($attribute,'Tempat Sudah Diisi!!');
+                }
             }
         }
     }
