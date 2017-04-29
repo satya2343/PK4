@@ -200,4 +200,5 @@ class MonitorController extends Controller
 
         return $isi;
     }
+
 }
